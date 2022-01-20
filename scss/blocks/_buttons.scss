@@ -1,0 +1,47 @@
+.btn {
+  margin-top: 40px;
+  padding: 21px 61px;
+  border: 1px solid $primary-color;
+  border-radius: 40px;
+  text-decoration: none;
+  color: $primary-color;
+  width: 215px;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 700;
+  text-align: center;
+  &:hover {
+    color: $secondary-color;
+    border-color: $secondary-color;
+  }
+  &-cv {
+    width: 250px;
+  }
+  &-promo {
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    &:hover {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+  &-circle {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+
+.visible {
+  opacity: 1;
+}

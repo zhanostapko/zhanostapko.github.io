@@ -1,0 +1,118 @@
+.subheading {
+  position: relative;
+  font-family: $headings-font;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: $primary-color;
+  margin: 0;
+  margin-bottom: 18px;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -49px;
+    z-index: 10;
+    border-radius: 50%;
+    background-color: $secondary-color;
+  }
+}
+.education {
+  & .container {
+    transition: opacity 1s ease-in, transform 1s ease-in;
+  }
+  &-descr {
+    margin-bottom: 30px;
+  }
+  padding: 55px 0;
+  background-color: $bg-color;
+  & .heading {
+    text-align: center;
+  }
+  &-institution {
+    font-family: $headings-font;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: $primary-color;
+    margin-bottom: 21px;
+    & span {
+      margin-left: 13px;
+    }
+    & span::before {
+      content: '';
+      display: inline-block;
+      margin-right: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: -5px;
+      width: 6px;
+      height: 6px;
+      background-color: $secondary-color;
+      border-radius: 50%;
+    }
+  }
+  &-wrapper {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 960px;
+    overflow-x: hidden;
+  }
+  &-points {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 2;
+    column-gap: 86px;
+  }
+  &-point {
+    margin-top: 22px;
+    max-width: 440px;
+    text-align: right;
+    transition: opacity 2s ease-in, transform 0.5s ease-out;
+    &.hidden {
+      opacity: 0;
+      &.right {
+        transform: translateX(100vw);
+      }
+      &.left {
+        transform: translateX(-100vw);
+      }
+    }
+    &.right {
+      text-align: left;
+      grid-column: 2;
+    }
+    &.visible {
+      opacity: 1;
+      &.left,
+      &.right {
+        transform: none;
+      }
+      transform: none;
+    }
+    &:nth-child(2),
+    &:nth-child(4) {
+      margin-top: -80px;
+      margin-bottom: 30px;
+    }
+    &.left .subheading::before {
+      left: calc(100% + 37px);
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  width: 2px;
+  height: calc(100% - 90px);
+  background-color: #31383d;
+}
