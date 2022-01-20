@@ -27,7 +27,7 @@ const closeModal = function () {
   overlay.classList.add('hidden');
 };
 
-btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+btnsOpenModal.forEach((btn) => btn.addEventListener('click', openModal));
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
@@ -60,7 +60,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 tabContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
-  console.log(clicked);
 
   if (!clicked) {
     return;
@@ -68,12 +67,11 @@ tabContainer.addEventListener('click', function (e) {
 
   //Remove classes
 
-  tabs.forEach(t => t.classList.remove('operations__tab--active'));
-  tabContent.forEach(c => c.classList.remove('operations__content--active'));
+  tabs.forEach((t) => t.classList.remove('operations__tab--active'));
+  tabContent.forEach((c) => c.classList.remove('operations__content--active'));
 
   //Activate classes
   clicked.classList.add('operations__tab--active');
-  console.log(clicked.dataset.tab);
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
@@ -87,7 +85,7 @@ const handHover = function (e) {
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
     const logo = link.closest('.nav').querySelector('img');
 
-    siblings.forEach(el => {
+    siblings.forEach((el) => {
       if (el !== link) {
         el.style.opacity = this;
       }
@@ -144,7 +142,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
   threshold: 0.15,
 });
 
-allSection.forEach(section => {
+allSection.forEach((section) => {
   sectionObserver.observe(section);
   section.classList.add('section--hidden');
 });
@@ -174,7 +172,7 @@ const imgObserver = new IntersectionObserver(loadImg, {
   rootMargin: '200px',
 });
 
-imgTargets.forEach(imgTarget => {
+imgTargets.forEach((imgTarget) => {
   imgObserver.observe(imgTarget);
 });
 
@@ -201,7 +199,7 @@ const slider = function () {
   const activateDot = function (slide) {
     document
       .querySelectorAll('.dots__dot')
-      .forEach(dot => dot.classList.remove('dots__dot--active'));
+      .forEach((dot) => dot.classList.remove('dots__dot--active'));
 
     document
       .querySelector(`.dots__dot[data-slide="${slide}"]`)
