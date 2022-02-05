@@ -45,6 +45,7 @@ const switchPlayer = function () {
 // Roll Button
 rollBtn.addEventListener('click', () => {
   if (playing) {
+    const randNum = Math.trunc(Math.random() * 6 + 1);
     diceEl.src = `dice-${randNum}.png`;
     diceEl.classList.remove('hidden');
 
