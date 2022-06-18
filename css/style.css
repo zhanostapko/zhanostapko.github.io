@@ -413,6 +413,7 @@
 }
 
 .skill-text {
+  max-height: 110px;
   width: 300px;
   text-align: center;
 }
@@ -490,7 +491,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(30, 35, 38, 0.8);
+  background-color: rgba(30, 35, 38, 0.5);
   opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -592,7 +593,6 @@
 
 .education-institution span {
   margin-left: 13px;
-  font-size: 15px;
 }
 
 .education-institution span::before {
